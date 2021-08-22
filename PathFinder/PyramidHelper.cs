@@ -12,7 +12,7 @@ namespace PathFinder
             foreach (var row in pyramid)
                 {
                 i++;
-                Console.WriteLine ($"{string.Concat (Enumerable.Repeat (" ", pyramid.Length - i))}{String.Join (" ", row)}");
+                Console.WriteLine (String.Join (" ", row));
                 }
             Console.WriteLine();
             }
