@@ -5,3 +5,4 @@
 /.vs/PathFinder
 /PathFinder/bin/Debug/netcoreapp3.1
 /PathFinder/obj/Debug/netcoreapp3.1
+/PathFinder/obj
