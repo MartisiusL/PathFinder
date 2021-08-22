@@ -8,14 +8,23 @@ namespace PathFinder
         {
         static void Main (string[] args)
             {
-            int[][] pyramid = new int[4][];
-            pyramid[0] = new int[1] { 1 };
-            pyramid[1] = new int[2] { 8, 9 };
-            pyramid[2] = new int[3] { 1, 5, 9 };
-            pyramid[3] = new int[4] { 4, 5, 2, 3 };
+            // Default pyramid that was required.
+            var pyramid = PyramidHelper.CreatePredefinedPyramid ();
 
-            var bestPath = new List<int> () { 0, 0, 0, 0 };
-            var currentPath = new List<int> () { 0, 0, 0, 0 };
+            // Pyramid that is created by reading contents of the "pyramid.txt" file.
+            // var pyramid = PyramidHelper.CreatePyramidFromFile ();
+
+            // Pyramid that is generated with random integers.
+            // var pyramid = PyramidHelper.CreateRandomPyramid (10);
+
+            // Pyramid that is generated with random integers, but always has odd - even pattern.
+            // var pyramid = PyramidHelper.CreatePatternPyramid (10);
+
+            // Prints out entire pyramid to visually see it.
+            // PyramidHelper.ShowPyramid (pyramid);
+
+            var bestPath = Enumerable.Repeat (0, pyramid.Length).ToList ();
+            var currentPath = Enumerable.Repeat (0, pyramid.Length).ToList ();
 
             GoDeeper (pyramid, 0, 0, ref bestPath, currentPath);
             Console.WriteLine ($"Max sum: {CountSum (bestPath)}");
