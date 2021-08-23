@@ -4,7 +4,7 @@
         {
         static void Main (string[] args)
             {
-            SolutionWithJaggedArrays.SolutionWithJaggedArrays.Run ();
+            // SolutionWithJaggedArrays.SolutionWithJaggedArrays.Run ();
             SolutionWithBinaryTree.SolutionWithBinaryTree.Run ();
             }
         }
