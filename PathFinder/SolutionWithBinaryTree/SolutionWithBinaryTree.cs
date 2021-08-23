@@ -27,11 +27,11 @@ namespace PathFinder.SolutionWithBinaryTree
             var bestPath = Enumerable.Repeat (0, depth).ToList ();
             var currentPath = Enumerable.Repeat (0, depth).ToList ();
 
-            GoDeeper (pyramid, 0, ref bestPath, currentPath);
+            GoDeeper (pyramid, ref bestPath, currentPath);
             Utilities.ShowResults (bestPath);
             }
 
-        private static void GoDeeper (Node currentNode, int depth, ref List<int> bestPath, List<int> currentPath)
+        private static void GoDeeper (Node currentNode, ref List<int> bestPath, List<int> currentPath, int depth = 0)
             {
             currentPath[depth] = currentNode.Value;
             if (currentNode.LeftNode is null)
@@ -46,12 +46,12 @@ namespace PathFinder.SolutionWithBinaryTree
 
             if (Utilities.MatchPattern (currentNode.Value, currentNode.LeftNode.Value))
                 {
-                GoDeeper (currentNode.LeftNode, depth + 1, ref bestPath, currentPath);
+                GoDeeper (currentNode.LeftNode, ref bestPath, currentPath, depth + 1);
                 }
 
             if (Utilities.MatchPattern (currentNode.Value, currentNode.RightNode.Value))
                 {
-                GoDeeper (currentNode.RightNode, depth + 1, ref bestPath, currentPath);
+                GoDeeper (currentNode.RightNode, ref bestPath, currentPath, depth + 1);
                 }
             }
         }

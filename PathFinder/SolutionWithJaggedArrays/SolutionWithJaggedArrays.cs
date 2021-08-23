@@ -26,11 +26,11 @@ namespace PathFinder.SolutionWithJaggedArrays
             var bestPath = Enumerable.Repeat (0, pyramid.Length).ToList ();
             var currentPath = Enumerable.Repeat (0, pyramid.Length).ToList ();
 
-            GoDeeper (pyramid, 0, 0, ref bestPath, currentPath);
+            GoDeeper (pyramid, ref bestPath, currentPath);
             Utilities.ShowResults (bestPath);
             }
 
-        private static void GoDeeper (int[][] pyramid, int depth, int lastIndex, ref List<int> bestPath, List<int> currentPath)
+        private static void GoDeeper (int[][] pyramid, ref List<int> bestPath, List<int> currentPath, int depth = 0, int lastIndex = 0)
             {
             currentPath[depth] = pyramid[depth][lastIndex];
             if (depth == pyramid.Length - 1)
@@ -45,12 +45,12 @@ namespace PathFinder.SolutionWithJaggedArrays
 
             if (Utilities.MatchPattern (pyramid[depth][lastIndex], pyramid[depth + 1][lastIndex]))
                 {
-                GoDeeper (pyramid, depth + 1, lastIndex, ref bestPath, currentPath);
+                GoDeeper (pyramid, ref bestPath, currentPath, depth + 1, lastIndex);
                 }
 
             if (Utilities.MatchPattern (pyramid[depth][lastIndex], pyramid[depth + 1][lastIndex + 1]))
                 {
-                GoDeeper (pyramid, depth + 1, lastIndex + 1, ref bestPath, currentPath);
+                GoDeeper (pyramid, ref bestPath, currentPath, depth + 1, lastIndex + 1);
                 }
             }
         }
