@@ -1,10 +1,9 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 
-namespace PathFinder
+namespace PathFinder.SolutionWithJaggedArrays
     {
-    public static class PyramidHelper
+    public static class PyramidHelperForJaggedArrays
         {
         public static void ShowPyramid (int[][] pyramid)
             {
