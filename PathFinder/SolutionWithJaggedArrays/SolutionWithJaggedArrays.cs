@@ -9,10 +9,10 @@ namespace PathFinder.SolutionWithJaggedArrays
         public static void Run ()
             {
             // Default pyramid that was required.
-            var pyramid = PyramidHelperForJaggedArrays.CreatePredefinedPyramid ();
+            // var pyramid = PyramidHelperForJaggedArrays.CreatePredefinedPyramid ();
 
             // Pyramid that is created by reading contents of the "pyramid.txt" file.
-            // var pyramid = PyramidHelperForJaggedArrays.CreatePyramidFromFile ();
+            var pyramid = PyramidHelperForJaggedArrays.CreatePyramidFromFile ();
 
             // Pyramid that is generated with random integers.
             // var pyramid = PyramidHelperForJaggedArrays.CreateRandomPyramid (10);
